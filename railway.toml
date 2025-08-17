@@ -1,0 +1,14 @@
+# Railway deployment (railway.toml)
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "followtrain-api"
+
+[services.variables]
+NODE_ENV = "production"
